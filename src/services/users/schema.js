@@ -21,3 +21,5 @@ const blogSchema = new Schema({
 );
 
 export default model("Blogs", blogSchema);
+
+

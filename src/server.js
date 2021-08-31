@@ -21,7 +21,7 @@ server.use("/blogs",blogRouter)
 /* ************MONGOOSE CONNECTION************* */
 mongoose.connect(process.env.MONGO_CONNECTION)
 
-mongoose.connection.on("Connected", () => {
+mongoose.connection.on("connected", () => {
     console.log("Connection Successful to mongo!");
     server.listen(PORT, () => {
         console.table(listEndpoints(server));

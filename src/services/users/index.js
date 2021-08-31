@@ -1,13 +1,13 @@
 import express from "express"
 import createError from "http-errors"
 
-import blogModel from "./schema.js"
+import BlogModel from "./schema.js"
 
 const blogRouter = express.Router()
 
 blogRouter.post('/', async (req, res, next)=> {
     try {
-        const newBlog = new blogModel(req.body)
+        const newBlog = new BlogModel(req.body)
         const {_id} = await newBlog.save()
 
         res.status(201).send(_id)
@@ -16,12 +16,12 @@ blogRouter.post('/', async (req, res, next)=> {
     }
 })
 
-usersRouter.get("/", async(req,res,next) => {
+blogRouter.get("/", async(req,res,next) => {
     try {
       
-      const users = await UserModel.find({})
+      const blogs = await BlogModel.find({})
   
-      res.send(users)
+      res.send(blogs)
       
     } catch (error) {
       next(error)
