@@ -28,7 +28,7 @@ blogRouter.get("/", async(req,res,next) => {
     }
   })
 
-  blogRouter.get("/blogId", async(req,res,next) => {
+  blogRouter.get("/:blogId", async(req,res,next) => {
     try {
       
       const blogId = req.params.blogId
