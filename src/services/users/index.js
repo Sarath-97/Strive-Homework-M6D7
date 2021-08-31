@@ -10,7 +10,7 @@ blogRouter.post('/', async (req, res, next)=> {
         const newBlog = new BlogModel(req.body)
         const {_id} = await newBlog.save()
 
-        res.status(201).send(_id)
+        res.status(201).send(`My unique id: ${_id}`)
     } catch (error) {
         next(error)
     }
