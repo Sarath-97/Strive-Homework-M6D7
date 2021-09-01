@@ -22,11 +22,11 @@ const blogSchema = new Schema(
 );
 
 const commentSchema = new Schema({
-  text: { type: String, required: true},
-  author: { type: String, required: true}
+  author: { type: String, required: true},
+  text: { type: String, required: true}
 }, { 
   timestamps: true 
 })
 
-export default model("Blogs", blogSchema);
+export const BlogModel = model("Blogs", blogSchema);
 export const CommentModel = model("Comment", commentSchema)
