@@ -2,9 +2,9 @@
 import express from "express"
 import q2m from "query-to-mongo"
 
-import AuthorModel from "./schema.js"
+import AuthorModel from "./authorSchema.js"
 
-const authorsRouter = express.Router()
+const authorRouter = express.Router()
 
 authorRouter.get("/", async (req, res, next) => {
   try {
@@ -24,7 +24,7 @@ authorRouter.get("/", async (req, res, next) => {
   }
 })
 
-authorsRouter.post("/", async (req, res, next) => {
+authorRouter.post("/", async (req, res, next) => {
   try {
     const newAuthor = new AuthorModel(req.body) // here happens validation of the req.body, if it's not ok mongoose will throw a "ValidationError"
     const { _id } = await newAuthor.save()
