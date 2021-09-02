@@ -12,7 +12,7 @@ server.use(express.json())
 
 /* **************ROUTES ***************** */
 
-server.use("/blogpost",blogRouter)
+server.use("/blogPost",blogRouter)
 server.use("/authors", authorRouter)
 
 /* **************ERROR HANDLERS***************** */

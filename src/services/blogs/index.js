@@ -19,7 +19,7 @@ blogRouter.post('/', async (req, res, next)=> {
 blogRouter.get("/", async(req,res,next) => {
     try {
       
-      const blogs = await BlogModel.find({})
+      const blogs = await BlogModel.find({}).populate("author")
   
       res.send(blogs)
       
