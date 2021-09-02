@@ -1,6 +1,7 @@
 import express from "express"
 import listEndpoints from "express-list-endpoints"
 import  mongoose  from "mongoose"
+import authorRouter from "./services/authors/authors.js"
 import blogRouter from "./services/blogs/index.js"
 
 const server = express()
@@ -12,6 +13,7 @@ server.use(express.json())
 /* **************ROUTES ***************** */
 
 server.use("/blogpost",blogRouter)
+server.use("/authors", authorRouter)
 
 /* **************ERROR HANDLERS***************** */
 
